@@ -1,11 +1,12 @@
 from Insurance.logger import logging
 from Insurance.exception import InsuranceException
 import os , sys
+from Insurance.utils import get_collection_as_data_frame
 
-def test_logger_and_exception():
+'''def test_logger_and_exception():
     try:
         logging.info('Starting the test_logger_and_exception')
-        result = 10/0
+        result = 0/10
         print (result)
         logging.info("Ending point of the logger")
     except Exception as e:
@@ -17,4 +18,11 @@ if __name__=="__main__":
     try:
         test_logger_and_exception()
     except Exception as e:
-        print (e)
+        print (e)'''
+
+
+if __name__ =="__main__":
+    try:
+        get_collection_as_data_frame(database_name = "INSURANCE",collection_name = 'INSURANCE_PROJECT')
+    except Exception as e:
+        print(e)

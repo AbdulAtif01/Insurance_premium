@@ -2,4 +2,5 @@ pandas
 numpy
 pymongo
 json
+dotenv
 -e .
