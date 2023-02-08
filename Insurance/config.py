@@ -5,13 +5,13 @@ import json
 import os, sys
 from dataclasses import dataclass
 
+
 @dataclass
-class Environment_variable:
-    mongo_db_url = os.getenv('MONGO_DB_URL')
+class EnvironmentVariable:
+    mongo_db_url:str = os.getenv("MONGO_DB_URL")
 
 
-env_var = Environment_variable()
+env_var = EnvironmentVariable()
 mongo_client = pymongo.MongoClient(env_var.mongo_db_url)
-TARGET_COLUMNS = 'expenses'
-
-
+TARGET_COLUMN = "expenses"
+print(env_var.mongo_db_url)

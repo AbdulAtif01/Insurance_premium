@@ -2,19 +2,26 @@ import logging
 from datetime import datetime
 import os
 
-LOG_DIR = 'Insurance_log'
+# Creating logs directory to store log in files
+LOG_DIR = "Insurance_log"
 
-Current_Time_stamp = f"{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}"
+# Creating file name for log file based on current timestamp
+CURRENT_TIME_STAMP = f"{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}"
 
-Log_File_Name = f"log_{Current_Time_stamp}.log"
+# Here, We are going to define the path to store log with folder_name
+LOG_FIlE_NAME = f"log_{CURRENT_TIME_STAMP}.log"
 
-os.makedirs(LOG_DIR,exist_ok = True)
 
-Log_File_Path = os.path.join(LOG_DIR,Log_File_Name)
+#Creating LOG_DIR if it does not exists.
+os.makedirs(LOG_DIR, exist_ok=True)
 
-logging.basicConfig(filename=Log_File_Path,
+#Creating file path for projects.
+LOG_FIlE_PATH = os.path.join(LOG_DIR, LOG_FIlE_NAME)
+
+# If you want to read log select baseconfig and press f12 from your system.
+logging.basicConfig(filename=LOG_FIlE_PATH,
 filemode = "w",
 format = '[%(asctime)s] %(name)s - %(levelname)s - %(message)s',
+#level=logging.INFO,
 level=logging.DEBUG,
-
 )
